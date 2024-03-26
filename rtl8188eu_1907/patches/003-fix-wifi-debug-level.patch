@@ -1,0 +1,32 @@
+diff --git a/Makefile b/Makefile
+index fc815a0..264fa0d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -76,7 +76,7 @@ CONFIG_RTW_GRO = y
+ CONFIG_RTW_DEBUG = y
+ # default log level is _DRV_INFO_ = 4,
+ # please refer to "How_to_set_driver_debug_log_level.doc" to set the available level.
+-CONFIG_RTW_LOG_LEVEL = 4
++CONFIG_RTW_LOG_LEVEL = 2
+ ######################## Wake On Lan ##########################
+ CONFIG_WOWLAN = n
+ CONFIG_GPIO_WAKEUP = n
+diff --git a/include/wifi.h b/include/wifi.h
+index 58d40de..773c44d 100644
+--- a/include/wifi.h
++++ b/include/wifi.h
+@@ -1008,10 +1008,10 @@ typedef enum _HT_CAP_AMPDU_DENSITY {
+  * A-PMDU buffer sizes
+  * According to IEEE802.11n spec size varies from 8K to 64K (in powers of 2)
+  */
+-#define IEEE80211_MIN_AMPDU_BUF 0x8
+-#if (LINUX_VERSION_CODE < KERNEL_VERSION(4,19,0))
+-#define IEEE80211_MAX_AMPDU_BUF 0x40
+-#endif
++// #define IEEE80211_MIN_AMPDU_BUF 0x8
++// #if (LINUX_VERSION_CODE < KERNEL_VERSION(4,19,0))
++// #define IEEE80211_MAX_AMPDU_BUF 0x40
++// #endif
+ 
+ 
+ /* Spatial Multiplexing Power Save Modes */
